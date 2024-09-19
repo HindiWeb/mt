@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Define variables for the destination page name and URL
+        var destinationPage = {
+            name: "Blog site",
+            url: "b20a701bdb"
+        };
+        
+        window.onload = function() {
+            // Set the page title dynamically
+            document.title = "Redirecting to " + destinationPage.name;
+            
+            // Create and append the meta refresh tag
+            var metaTag = document.createElement('meta');
+            metaTag.setAttribute('http-equiv', 'refresh');
+            metaTag.setAttribute('content', '0;url=' + destinationPage.url); // Refresh after 5 seconds, redirect to the URL
+            document.head.appendChild(metaTag);
+            
+            // Display a message in the body
+            var message = document.createElement('p');
+            message.innerHTML = "You will be redirected to <a href='"+ destinationPage.url+"'>" + destinationPage.name + "</a> ...";
+            // document.body.appendChild(message);
+        };
+    </script>
+    <style>
+        /* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 60px;
+  aspect-ratio: 1;
+  border: 15px solid #ddd;
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(45deg);
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  border: 15px solid #514b82;
+  animation: l18 2s infinite linear;
+}
+@keyframes l18 {
+    0%   {clip-path:polygon(50% 50%,0 0,0    0,0    0   ,0    0   ,0    0   )}
+    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0   ,100% 0   ,100% 0   )}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0    100%,0    100%)}
+    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0    100%,0    0   )}
+}
+.loader {
+    margin: auto;
+    margin-top: 40vh;
+    margin-bottom: 40vh;
+}
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+    
+</body>
+</html>
