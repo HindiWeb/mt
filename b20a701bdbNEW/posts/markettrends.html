@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Blog Post</title>
+    
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
+
+    <!-- jQuery CDN  -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLR/fQCBI5TOygDvqWegbO2l7Q5fEYcEbl0J2qLoTM" crossorigin="anonymous"></script> --> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <style>
+        body .container#main {
+            padding-top: 20px !important;
+        }
+        .post-title {
+            margin-bottom: 20px;
+        }
+        .recent-posts, .popular-posts, .post-tags {
+            margin-bottom: 30px;
+        }
+        @media (max-width: 992px) {
+            aside {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+        <a class="navbar-brand" href="../index.html">MoneyIsBlogging</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="../blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../contact.html">Contact</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="container" id="main">
+        <div class="row">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                <article>
+                    <h1 class="post-title">Understanding Technical Analysis in Trading</h1>
+                    <p class="text-muted">Posted on: September 19, 2024 by Admin</p>
+                    <hr>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
+                        Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. 
+                        Praesent mauris. Fusce nec tellus sed augue semper porta.
+                    </p>
+                    <p>
+                        Technical analysis is a crucial component of any trader's strategy. It involves using historical price data 
+                        to predict future price movements. Understanding key indicators such as moving averages, RSI, and MACD 
+                        can help traders make informed decisions.
+                    </p>
+                    <p>
+                        Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per 
+                        conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.
+                    </p>
+                    <p>
+                        Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus 
+                        et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci.
+                    </p>
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="col-lg-4">
+                <!-- Recent Posts -->
+                <div class="card recent-posts">
+                    <div class="card-header">
+                        Recent Trading Posts
+                    </div>
+                    <ul class="list-group list-group-flush" id="recent-posts">
+                        <!-- Recent posts loaded via jQuery -->
+                    </ul>
+                </div>
+
+                <!-- Popular Posts -->
+                <div class="card popular-posts mt-4">
+                    <div class="card-header">
+                        Popular Posts
+                    </div>
+                    <ul class="list-group list-group-flush" id="popular-posts">
+                        <!-- Popular posts loaded via jQuery -->
+                    </ul>
+                </div>
+
+                <!-- Posts by Tags -->
+                <div class="card post-tags mt-4">
+                    <div class="card-header">
+                        Tags
+                    </div>
+                    <div class="card-body" id="post-tags">
+                        <!-- Tags loaded via jQuery -->
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- jQuery for Simulating Server Data Fetching -->
+    <script>
+        $(document).ready(function() {
+            // Simulated data that would come from a server
+            var response = {
+                recentPosts: [
+                    { title: "How to Trade with Moving Averages", link: "#"},
+                    { title: "Top 5 Trading Strategies for 2024", link: "#"},
+                    { title: "Mastering Fibonacci Retracement Levels", link: "#"}
+                ],
+                popularPosts: [
+                    { title: "10 Trading Mistakes to Avoid", link: "#"},
+                    { title: "The Ultimate Guide to Day Trading", link: "#"},
+                    { title: "Understanding Risk Management in Trading", link: "#"}
+                ],
+                tags: [
+                    { name: "Technical Analysis", link: "#"},
+                    { name: "Trading Strategies", link: "#"},
+                    { name: "Risk Management", link: "#"},
+                    { name: "Cryptocurrency", link: "#"},
+                    { name: "Stock Market", link: "#"}
+                ]
+            };
+
+            // Populate Recent Posts
+            var recentPostsHtml = '';
+            response.recentPosts.forEach(function(post) {
+                recentPostsHtml += '<li class="list-group-item"><a href="' + post.link + '">' + post.title + '</a></li>';
+            });
+            $('#recent-posts').html(recentPostsHtml);
+
+            // Populate Popular Posts
+            var popularPostsHtml = '';
+            response.popularPosts.forEach(function(post) {
+                popularPostsHtml += '<li class="list-group-item"><a href="' + post.link + '">' + post.title + '</a></li>';
+            });
+            $('#popular-posts').html(popularPostsHtml);
+
+            // Populate Tags
+            var tagsHtml = '';
+            response.tags.forEach(function(tag) {
+                tagsHtml += '<a href="' + tag.link + '" class="badge bg-primary me-1">' + tag.name + '</a>';
+            });
+            $('#post-tags').html(tagsHtml);
+        });
+    </script>
+    
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 MoneyIsBlogging. All rights reserved.</p>
+    </footer>
+    <!-- Bootstrap JS Bundle (with Popper) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-4e5CfApVoKA5kzHmwCU7arJh3rK5ps5mTRsoiEvfZyupqj32K+STjwaV5W8YY2ZJ" crossorigin="anonymous"></script> -->
+</body>
+</html>
